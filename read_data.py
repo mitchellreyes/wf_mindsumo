@@ -1,19 +1,15 @@
 import pandas as pd
 from customer import customer
 
-
 def read_data():
-    customer_list = {}
-
     #reads csv into dataframe
     df = pd.read_csv('MonthEndBalances.csv')
+    customer_list = {}
 
     #creates a customer instance for each masked id
     for index, row in df.iterrows():
         if row['masked_id'] not in customer_list:
-            c = customer()
-            c.age = int(row['age'])
-            c.id = row['masked_id']
+            c = customer(m_id=int(row['masked_id']), d_age= int(row['age']))
             customer_list.update({int(row['masked_id']) : c})
     #splits the data to each customer
     for index, row in df.iterrows():
@@ -54,7 +50,17 @@ def read_data():
             customer_list.get(row['masked_id']).contact_mediums.update({'direct_phone_cnt': [row['direct_phone_cnt']]})
         else:
             customer_list.get(row['masked_id']).contact_mediums['direct_phone_cnt'].append(row['direct_phone_cnt'])
-
+    find_sample_data(customer_list)
     return customer_list
 
-#read_data()
+def find_sample_data(c_list):
+    training_data = {}
+    for c in c_list:
+        #just checks the most recent month (12) against the last month (7)
+        #could be adjusted to check all values
+        if c_list[c].checking_acct_count[0] > c_list[c].checking_acct_count[-1]:
+            training_data.update({c : 'open an account'})
+            c_list[c].checking_status = 'open an account'
+        elif c_list[c].checking_acct_count[0] < c_list[c].checking_acct_count[-1]:
+            training_data.update({c : 'close an account'})
+            c_list[c].checking_status = 'close an account'
