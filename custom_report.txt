@@ -180,7 +180,7 @@ PREDICTIONS MADE BY DECISION TREE:
 	[masked_id: 26, age: 56]
 		checkings_balances: ['4727.08', '1080.90', '2598.70', '6384.89', '9580.85', '21589.38']
 		savings_balances: ['1247.21', '3210.25', '3230.26', '1279.25', '12935.36', '32455.36']
-	[Decision: open an account]
+	[Decision: close an account]
 	[Preferred contact method: online_bank]
 
 	[masked_id: 27, age: 22]

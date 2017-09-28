@@ -1,5 +1,6 @@
 from read_data import read_data
 from sklearn import tree
+import graphviz as gp
 
 #file where the decision tree information will print to
 output_file = 'custom_report.txt'
@@ -84,14 +85,17 @@ def create_decision_tree():
     model = tree.DecisionTreeClassifier()
     model.fit(check_bal, decision)
 
-    #predict = model.predict([df[2].get_check_balances()])
-
     for masked_id in customer_list:
         if customer_list[masked_id].get_checking_status() == '':
             predict = model.predict([customer_list[masked_id].get_check_balances()])
             customer_list[masked_id].checking_status = predict[0]
 
     model.fit(sav_bal, decision)
+
+    #print the decision tree to file
+    dot_data = tree.export_graphviz(model, out_file = None)
+    graph = gp.Source(dot_data)
+    graph.render("decision_tree_output")
 
     for masked_id in customer_list:
         if customer_list[masked_id].get_checking_status() == 'close an account':
