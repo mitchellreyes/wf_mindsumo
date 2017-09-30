@@ -117,11 +117,6 @@ def graph_support_data(train_data = {}):
         count = 0
         for x in graphs:
             axis.append(x.add_subplot(111))
-        # #X = checking account balances
-        # X = []
-        # #Y = checking account count
-        # Y = []
-        # ids = []
         for masked_id in train_data:
             if train_data[masked_id].get_checking_status() != '':
                 X = train_data[masked_id].get_check_balances()
