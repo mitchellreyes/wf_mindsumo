@@ -108,7 +108,11 @@ def create_decision_tree():
 
 
     print_data_report(c_list = customer_list, file_name = output_file, train_data = training_data_for_print)
-
+'''
+@fn: graph_support_data()
+@params: train_data = original data set w.o any changes to checking status
+@result: opens a bar graph for each person in the training data
+'''
 def graph_support_data(train_data = {}):
     if len(train_data) > 0:
         graphs = [plt.figure(), plt.figure(), plt.figure(), plt.figure(), plt.figure()]
