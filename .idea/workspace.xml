@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c7009b4-c9f6-4c78-a13a-edf4b89c2c70" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/decision_tree_output.pdf" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection/Figure_1.png" afterPath="$PROJECT_DIR$/data_collection/Figure_1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection/Figure_2.png" afterPath="$PROJECT_DIR$/data_collection/Figure_2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection/Figure_3.png" afterPath="$PROJECT_DIR$/data_collection/Figure_3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection/Figure_4.png" afterPath="$PROJECT_DIR$/data_collection/Figure_4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection/Figure_5.png" afterPath="$PROJECT_DIR$/data_collection/Figure_5.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/custom_report.txt" afterPath="$PROJECT_DIR$/custom_report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/customer.py" afterPath="$PROJECT_DIR$/customer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_analysis.py" afterPath="$PROJECT_DIR$/data_analysis.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decision_tree_output" afterPath="$PROJECT_DIR$/decision_tree_output" />
     </list>
@@ -21,8 +24,8 @@
       <file leaf-file-name="data_analysis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+            <state relative-caret-position="233">
+              <caret line="128" column="61" lean-forward="false" selection-start-line="128" selection-start-column="61" selection-end-line="128" selection-end-column="61" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
                 <element signature="e#3619#4961#0" expanded="false" />
@@ -156,13 +159,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="893" height="926" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="944" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.518477" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36341465" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35560858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -228,8 +231,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state relative-caret-position="233">
+          <caret line="128" column="61" lean-forward="false" selection-start-line="128" selection-start-column="61" selection-end-line="128" selection-end-column="61" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
             <element signature="e#3619#4961#0" expanded="false" />

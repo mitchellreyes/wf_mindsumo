@@ -126,9 +126,12 @@ def graph_support_data(train_data = {}):
             if train_data[masked_id].get_checking_status() != '':
                 X = train_data[masked_id].get_check_balances()
                 Y = train_data[masked_id].get_checking_account_count()
-                label_string = str(masked_id) + " " + train_data[masked_id].get_checking_status()
+                label_string = "masked id: " + str(masked_id)
                 graphs[count].suptitle(label_string)
-                axis[count].bar(Y, X, label = label_string, color = colors[count])
+                axis[count].bar(Y, X, label = label_string, color = colors[count], align='center')
+                axis[count].set_ylabel('checking account balances')
+                axis[count].set_xlabel('number of checking accounts')
+                axis[count].set_xticks([min(Y), max(Y)])
                 count += 1
         plt.show()
 

@@ -126,7 +126,7 @@ PREDICTIONS MADE BY DECISION TREE:
 	[masked_id: 17, age: 79]
 		checkings_balances: ['25040.45', '37477.99', '35835.89', '36408.80', '46631.27', '34515.89']
 		savings_balances: ['2547.25', '2547.08', '10791.60', '10790.88', '21945.17', '21943.67']
-	[Decision: open an account]
+	[Decision: close an account]
 	[Preferred contact method: branch_visit]
 
 	[masked_id: 18, age: 19]
@@ -318,7 +318,7 @@ PREDICTIONS MADE BY DECISION TREE:
 	[masked_id: 49, age: 65]
 		checkings_balances: ['20656.83', '16100.55', '17798.92', '20381.14', '33760.20', '35411.38']
 		savings_balances: ['6794.90', '13584.54', '13583.88', '13583.19', '13582.52', '13581.83']
-	[Decision: close an account]
+	[Decision: open an account]
 	[Preferred contact method: branch_visit]
 
 	[masked_id: 50, age: 20]
