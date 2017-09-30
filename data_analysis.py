@@ -139,4 +139,3 @@ def graph_support_data(train_data = {}):
 
 #running the decision tree
 create_decision_tree()
-graph_support_data(training_data_for_print)
