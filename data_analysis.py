@@ -1,6 +1,7 @@
 from read_data import read_data
 from sklearn import tree
 import graphviz as gp
+from matplotlib import pyplot as plt
 
 #file where the decision tree information will print to
 output_file = 'custom_report.txt'
@@ -108,6 +109,31 @@ def create_decision_tree():
 
     print_data_report(c_list = customer_list, file_name = output_file, train_data = training_data_for_print)
 
+def graph_support_data(train_data = {}):
+    if len(train_data) > 0:
+        graphs = [plt.figure(), plt.figure(), plt.figure(), plt.figure(), plt.figure()]
+        axis = []
+        colors = ['red', 'blue', 'green', 'violet', 'orange']
+        count = 0
+        for x in graphs:
+            axis.append(x.add_subplot(111))
+        # #X = checking account balances
+        # X = []
+        # #Y = checking account count
+        # Y = []
+        # ids = []
+        for masked_id in train_data:
+            if train_data[masked_id].get_checking_status() != '':
+                X = train_data[masked_id].get_check_balances()
+                Y = train_data[masked_id].get_checking_account_count()
+                label_string = str(masked_id) + " " + train_data[masked_id].get_checking_status()
+                graphs[count].suptitle(label_string)
+                axis[count].bar(Y, X, label = label_string, color = colors[count])
+                count += 1
+        plt.show()
+
+
 
 #running the decision tree
 create_decision_tree()
+graph_support_data(training_data_for_print)

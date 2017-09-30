@@ -12,6 +12,9 @@ class customer():
         self.savings_acct_balances = []
 
         self.contact_mediums = {}
+
+    def get_checking_account_count(self):
+        return self.checking_acct_count
     def get_check_balances(self):
         return self.checking_acct_balances
     def get_checking_status(self):
