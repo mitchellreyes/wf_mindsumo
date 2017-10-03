@@ -2,7 +2,7 @@ from read_data import read_data
 from sklearn import tree
 import graphviz as gp
 from matplotlib import pyplot as plt
-
+import random
 #file where the decision tree information will print to
 output_file = 'custom_report.txt'
 
@@ -128,13 +128,68 @@ def graph_support_data(train_data = {}):
                 label_string = "masked id: " + str(masked_id)
                 graphs[count].suptitle(label_string)
                 axis[count].bar(Y, X, label = label_string, color = colors[count], align='center')
-                axis[count].set_ylabel('checking account balances')
+                axis[count].set_ylabel('checking account balance')
                 axis[count].set_xlabel('number of checking accounts')
                 axis[count].set_xticks([min(Y), max(Y)])
                 count += 1
         plt.show()
 
+'''
+@fn: get_non_classified()
+@Params: train_data is the original data set where only the training data is classified
+    passed from graph_other_data()
+@result: returns a shuffled list with all the masked id's that are not classified yet
+'''
+def get_non_classified(train_data = {}):
+    c_list = []
+    for masked_id in train_data:
+        if train_data[masked_id].get_checking_status() == '':
+            c_list.append(masked_id)
+    return random.sample(c_list, len(c_list))
+
+'''
+@fn: get_gain()
+@params: balances is the checking account balances from each customer, passed from graph_other_data()
+@result: returns a list where each value is the difference between the months
+'''
+def get_gain(balances = []):
+    if len(balances) > 0:
+        gain = []
+        for x in range(0, len(balances) - 1):
+            gain.append('%.2f' % (float(balances[x+1]) - float(balances[x])))
+        return gain
+
+'''
+@fn: graph_other_data()
+@params: train_data is the original data set with no classifications
+@result: will output n graphs where n is the number of training data and will compare n graphs with 
+        a randomly chosen non-classified customer.
+'''
+def graph_other_data(train_data = {}):
+    if len(train_data) > 0:
+        graphs = []
+        axis = []
+        nc = get_non_classified(train_data)
+        count = 0
+        for masked_id in train_data:
+            if train_data[masked_id].get_checking_status() != '':
+                X = get_gain(list(reversed(train_data[masked_id].get_check_balances())))
+                Y = list(xrange(5))
+                label_string = "masked id: " + str(masked_id) + ", Decision: " + str(train_data[masked_id].get_checking_status())
+                graphs.append(plt.figure())
+                axis.append(graphs[count].add_subplot(111))
+                graphs[count].suptitle(label_string)
+                axis[count].scatter(Y, get_gain(list(reversed(train_data[nc[count]].get_check_balances()))),
+                                 label="Non-classified, masked id: " + str(nc[count]), marker = '*')
+                axis[count].scatter(Y, X, label = "Classified")
+                axis[count].legend()
+                axis[count].grid()
+                axis[count].set_ylabel('Total gained in checking account b/w months')
+                axis[count].set_xlabel('month end balance')
+                count += 1
+        plt.show()
 
 
 #running the decision tree
 create_decision_tree()
+#graph_other_data(training_data_for_print)
