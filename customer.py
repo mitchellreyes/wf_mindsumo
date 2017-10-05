@@ -1,3 +1,17 @@
+'''
+Created By: Mitchell Reyes
+University of Nevada, Reno
+
+Purpose: https://www.mindsumo.com/contests/building-better
+'''
+
+
+'''
+The customer class that holds all of the customers' information read from
+the Month end balances CSV.
+
+Customers are created from read_data.py
+'''
 class customer():
     def __init__(self, m_id = 0, d_age = 0):
         self.masked_id = m_id

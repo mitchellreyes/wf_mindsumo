@@ -1,3 +1,10 @@
+'''
+Created by: Mitchell Reyes
+University of Nevada, Reno
+
+Purpose: https://www.mindsumo.com/contests/building-better
+'''
+
 from read_data import read_data
 from sklearn import tree
 import graphviz as gp

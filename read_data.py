@@ -1,7 +1,17 @@
+'''
+Created By: Mitchell Reyes
+University of Nevada, Reno
+
+Purpose: https://www.mindsumo.com/contests/building-better
+'''
+
 import pandas as pd
 from customer import customer
 
-#reads the data from csv and breaks up the data to a unique customer
+'''
+@fn: read_data()
+@result: creates and returns a list of all unique customers from the MonthEndBalances.csv
+'''
 def read_data():
     # reads csv into dataframe
     df = pd.read_csv('MonthEndBalances.csv')
@@ -61,15 +71,17 @@ def read_data():
     find_sample_data(customer_list)
     return customer_list
 
-#checks which customers originally closed/opened a checking account
+'''
+@fn: find_sample_data()
+@params: c_list = the customer list that is read in from read_data()
+@result: will determine if the customer opened/closed an account in the time frame.
+    This essentially pre-processes the data to obtain the training data for the decision tree
+'''
 def find_sample_data(c_list):
-    training_data = {}
     for c in c_list:
         # just checks the most recent month (12) against the last month (7)
         # could be adjusted to check all values
         if c_list[c].checking_acct_count[0] > c_list[c].checking_acct_count[-1]:
-            training_data.update({c: 'open an account'})
             c_list[c].checking_status = 'open an account'
         elif c_list[c].checking_acct_count[0] < c_list[c].checking_acct_count[-1]:
-            training_data.update({c: 'close an account'})
             c_list[c].checking_status = 'close an account'
